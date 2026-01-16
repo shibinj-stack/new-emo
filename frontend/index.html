@@ -1,0 +1,77 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Emotion AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">Emotion <span>AI</span></div>
+  <div class="status">ENGINE READY</div>
+</header>
+
+<div class="dashboard">
+
+  <div class="panel input-panel">
+    <div class="panel-header">
+      <h3>Text Input</h3>
+      <button class="clear-btn" onclick="clearInput()">Clear</button>
+    </div>
+
+    <textarea id="typingArea" placeholder="Type your thoughts..."></textarea>
+
+    <div class="panel-footer">
+      <span id="charCount">0 characters</span>
+      <button class="analyze-btn" onclick="sendData()">Analyze Emotion</button>
+    </div>
+  </div>
+
+  <div class="panel report-panel">
+    <h3>Analysis Report</h3>
+
+    <div class="emotion-card">
+      <div>
+        <div class="emotion-name" id="result">Waiting</div>
+        <div class="emotion-label">Primary Emotion</div>
+      </div>
+      <div class="confidence-pill" id="confidencePill">--%</div>
+    </div>
+
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <h4>Confidence</h4>
+        <div class="donut-container">
+          <svg width="120" height="120">
+            <circle cx="60" cy="60" r="50" class="donut-bg"/>
+            <circle cx="60" cy="60" r="50" class="donut-fill" id="donut"/>
+          </svg>
+          <div class="donut-text" id="confidenceBox">--%</div>
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <h4>Typing Rhythm</h4>
+        <canvas id="typingChart" width="260" height="120"></canvas>
+      </div>
+
+    </div>
+
+    <div class="system">
+      <h4>System</h4>
+      <div id="methodIndicator">Idle</div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
